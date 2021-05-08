@@ -1,0 +1,7 @@
+Model,Self,Mediscore
+LR,0.095,0.235
+LGB,0.22,0.23
+MLP,0.007,0.004
+XGB,0.195,0.238
+LR (tuned - log loss),0.075,0.239
+LGB (tuned),0.19,0.242

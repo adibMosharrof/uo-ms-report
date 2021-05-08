@@ -1,0 +1,17 @@
+
+\section{Scoring}
+
+The scoring mechanism in the Mediscore project has a concept of no score region that was not considered in our previous work. The idea behind the no score region is to 
+ignore the regions on the boundary of manipulated and non-manipulated regions. If an algorithm can identify the manipulated region in the image, it could still mislabel 
+a lot of pixels in the boundary region. This could incurr a high penalty to the algorithm and give it a score that does not accurately reflect on its performance. In
+order to produce the no score region, two of the core morphologic operations; erosion and dilasion, are applied to the image.
+
+\subsection{Dilation}
+
+Applying dilation $\oplus$ to an image expands the shape of the image. 
+
+\subsection{Erosion}
+
+The general output of erosion is that it shrinks the shape of the image. 
+
+\cite{tambe2013image}

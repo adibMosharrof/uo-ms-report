@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{graphicx}
+\setcounter{secnumdepth}{5}
+\usepackage[utf8]{inputenc}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+\usepackage{csvsimple}
+\usepackage{import}
+
+% \usepackage{subfiles} % Best loaded last in the preamble
+
+\title{UO MS Project Report}
+\author{Adib Mosharrof}
+\date{March 2021}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\import{./}{figures.tex}
+
+\import{./}{introduction.tex}
+
+\import{./}{data.tex}
+
+\import{./}{relatedwork.tex}
+
+\import{./}{scoring.tex}
+
+\import{./}{methodology.tex}
+
+\import{./}{experiments.tex}
+
+\import{./}{results.tex}
+
+\import{./}{discussion.tex}
+
+\import{./}{future_work.tex}
+
+\bibliographystyle{acm}
+\bibliography{ref}
+
+\end{document}
