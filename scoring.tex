@@ -1,17 +1,111 @@
 
 \section{Scoring}
 
-The scoring mechanism in the Mediscore project has a concept of no score region that was not considered in our previous work. The idea behind the no score region is to 
-ignore the regions on the boundary of manipulated and non-manipulated regions. If an algorithm can identify the manipulated region in the image, it could still mislabel 
-a lot of pixels in the boundary region. This could incurr a high penalty to the algorithm and give it a score that does not accurately reflect on its performance. In
-order to produce the no score region, two of the core morphologic operations; erosion and dilasion, are applied to the image.
+As mentioned in the Data section, in the dataset, the proportion of manipulated pixels when compared to non-manipulated pixels is very small. Unblanced data generally causes algorithms 
+to be biased towards the majority class, thus popular metrics like accuracy, which is the ratio between the number of correctly classified samples and the overall number of samples
+(for example \cite{wang2007accurate}), will no longer be an accurate metric to use here. Accuracy would provide an overoptimistic estimation  of the classifier's ability on 
+the majority class \cite{chicco2020advantages}. Consider a data set that has 10\% positive class and 90\% negative class. A naive classifier that always outputs the
+majority class label will have a high accuracy of 0.90. 
+
+
+The problem caused due to this imbalance can be addressed by using the Matthews correlation coefficient (MCC), a special case of the $\phi$ phi coefficient 
+\cite{guilford1954psychometric}. MCC has been originally developed by B.W. Matthews for comparison of chemical structures \cite{matthews1975comparison}. However, it was 
+re-proposed by Baldi and colleagues \cite{baldi2000assessing} in 2000 as a standard performance metric for machine learning with a natural extension to the multiclass
+scenario \cite{gorodkin2004comparing}.
+
+\subsection{Matthews Correlation Coefficient}
+
+Matthews correlation coefficient is defined in terms of True Positive (TP), True Negative (TN), False Positive (FP) and False Negative (FN). These terms can be calculated 
+from the confusion matrix as defined in Figure \ref{fig:confusion_matrix}. MCC is a contingency matrix method of calculating the \emph{Pearson product-moment correlation
+coefficient} \cite{powers2020evaluation} and can be calculated using Equation \ref{eq:mcc}.
+
+\begin{equation} \label{eq:mcc}
+    MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}
+\end{equation}
+
+\begin{figure}
+    \centering
+    \def\arraystretch{1.5}% for the vertical padding
+    \setlength{\tabcolsep}{1.5em} % for the horizontal padding
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        & \multicolumn{3}{c|}{Prediction} \\
+        \hline
+        \parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Actual}}} & &P &N \\
+        \cline{2-4}
+        &  P & TP& FN \\
+        \cline{2-4}
+        & N& FP& TN \\
+        \hline
+        \end{tabular}
+
+    \caption{The Standard Confusion Matrix }
+    \medskip
+    \footnotesize  Positives (P) and Negatives (N). True Positives(TP) and True Negatives (TN) are the correct predictions, while False Negatives (FN) and False Positive (FP)
+    are the incorrect predictions
+    
+    
+    \label{fig:confusion_matrix}
+\end{figure}
+
+\subsection{Mediscore}
+
+The scoring mechanism in the Mediscore project has a concept of no score region that was not considered in the previous work. The idea behind the no score region is to 
+ignore the regions on the boundary of the manipulated and non-manipulated regions. If an algorithm can identify the manipulated region in the image, it could still 
+mislabel a lot of pixels in the boundary region, which could incurr a high penalty to the algorithm and give it a score that does not accurately reflect its performance.
+To get a more fair score, the score is calculated by considering the pixels in the image excluding the pixels that are present in the no score region. In order to produce
+the no score region, two of the core morphologic operations; erosion and dilasion, are applied to the image. A difference operation is performed on the images produced 
+from erosion and dilation, which is followed by a binary inverse thresholding to produce the set of pixels that constitute the no score region.
 
 \subsection{Dilation}
 
-Applying dilation $\oplus$ to an image expands the shape of the image. 
+Applying dilation $\oplus$ to an image expands the shape of the image. Let $X$ be a gray scale shape and $B$ be a symmetric structuring element. The dilation operation 
+on these two elements, $X \oplus B$ can be defined as 
+
+\begin{equation} \label{eq:dilation}
+    X \oplus B = X + b = \{ x+ b : x \in X \& b \in B \} 
+\end{equation}
+
+
+The output of dilation is the set of translated points such that translate of the reflected structuring element has a non-empty intersection with $X$. Equation 
+\ref{eq:dilation} is based on obtaining the refelction of $B$ about its origin and shifting this reflection by $b$. The dilation of $X$ by $B$ is the set of all the 
+displacements, $b$, such that $x$ and $b$ overlap by atleast one element \cite{tambe2013image}.
 
 \subsection{Erosion}
 
-The general output of erosion is that it shrinks the shape of the image. 
+Erosion $\Theta$ is generally applied to images for eliminating irrelevent details in terms of size. 
 
-\cite{tambe2013image}
+\begin{equation} \label{eq:erosion}
+    X \Theta B = X - b = \{ z: (  B + z )  \in X \} 
+\end{equation}
+
+The output of erosion is the set of translation points such that the translated structuring element is contained in the input set $X$. Equation \ref{eq:erosion} indicates 
+that the erosion of $X$ by $B$ is the set of all points $b$ such that $B$, translated by $b$, contain $X$ \cite{tambe2013image}. The general output of erosion is that it 
+shrinks the shape of the image. 
+
+\subsection{No Score Region}
+
+The boundary no score region is produce by performing two operations sequentially, which are defined in Equation \ref{eq:morphed} and \ref{eq:bin_inv}
+Equation \ref{eq:bin_inv} is basically a binaray inverse thresholding.
+
+\begin{equation} \label{eq:morphed}
+    \psi = ( X \Theta B ) - ( X \oplus B)
+\end{equation}
+
+\begin{equation} \label{eq:bin_inv}
+    \text{NoScore}(x,y)=\begin{cases}
+        0, & \text{if } \psi(x,y) > 0  \\
+        1, & \text{otherwise}
+     \end{cases}
+\end{equation}
+
+\subsection{Thresholded MCC}
+
+The output of the algorithms is a grayscale image where pixel values are in the range $[0-255]$ and the ground truth is an image which has pixel values of $0$ or $1$, which 
+represent manipulated and non-manipulated pixels respectively. The output image is converted from a 2 dimensional array into a 1 dimensional array and the pixel indices that
+are in the no score region are filtered out to produce a list of pixels that are to be used in scoring. The indices in this list are called the scoring indices which will 
+be used to calculate the MCC score.
+
+The pixel values in the scoring indices list need to be converted to have a value of either $0$ or $1$. This conversion is done using a binary thresholding on the scoring 
+indices list, where the threshold values are in the range $[0-255]$. Thresholding is applied using every value in the range and the output produced is used with the ground truth
+to produce an MCC score for that particular threholded value. The maximum MCC value obtained is selected as the MCC score for the image.

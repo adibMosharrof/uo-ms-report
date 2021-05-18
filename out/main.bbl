@@ -1,7 +1,48 @@
 \begin{thebibliography}{1}
 
+\bibitem{baldi2000assessing}
+{\sc Baldi, P., Brunak, S., Chauvin, Y., Andersen, C.~A., and Nielsen, H.}
+\newblock Assessing the accuracy of prediction algorithms for classification:
+  an overview.
+\newblock {\em Bioinformatics 16}, 5 (2000), 412--424.
+
+\bibitem{chicco2020advantages}
+{\sc Chicco, D., and Jurman, G.}
+\newblock The advantages of the matthews correlation coefficient (mcc) over f1
+  score and accuracy in binary classification evaluation.
+\newblock {\em BMC genomics 21}, 1 (2020), 1--13.
+
+\bibitem{gorodkin2004comparing}
+{\sc Gorodkin, J.}
+\newblock Comparing two k-category assignments by a k-category correlation
+  coefficient.
+\newblock {\em Computational biology and chemistry 28}, 5-6 (2004), 367--374.
+
+\bibitem{guilford1954psychometric}
+{\sc Guilford, J.~P.}
+\newblock Psychometric methods.
+
+\bibitem{matthews1975comparison}
+{\sc Matthews, B.~W.}
+\newblock Comparison of the predicted and observed secondary structure of t4
+  phage lysozyme.
+\newblock {\em Biochimica et Biophysica Acta (BBA)-Protein Structure 405}, 2
+  (1975), 442--451.
+
+\bibitem{powers2020evaluation}
+{\sc Powers, D.~M.}
+\newblock Evaluation: from precision, recall and f-measure to roc,
+  informedness, markedness and correlation.
+\newblock {\em arXiv preprint arXiv:2010.16061\/} (2020).
+
 \bibitem{tambe2013image}
 {\sc Tambe, S.~B., Kulhare, D., Nirmal, M., and Prajapati, G.}
 \newblock Image processing (ip) through erosion and dilation methods.
+
+\bibitem{wang2007accurate}
+{\sc Wang, L., Chu, F., and Xie, W.}
+\newblock Accurate cancer classification using expressions of very few genes.
+\newblock {\em IEEE/ACM Transactions on computational biology and
+  bioinformatics 4}, 1 (2007), 40--53.
 
 \end{thebibliography}

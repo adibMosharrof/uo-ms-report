@@ -5,8 +5,12 @@
 \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 \usepackage{csvsimple}
 \usepackage{import}
-
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{array}
+% \renewcommand{\baselinestretch}{1.6}
 % \usepackage{subfiles} % Best loaded last in the preamble
+
 
 \title{UO MS Project Report}
 \author{Adib Mosharrof}
@@ -14,8 +18,13 @@
 
 \begin{document}
 
+\let\oldequation=\equation
+\let\endoldequation=\endequation
+\renewenvironment{equation}{\vspace{2mm}\begin{oldequation}}{\end{oldequation}\vspace{2mm}}
+
 \maketitle
 
+\newpage
 \tableofcontents
 \newpage
 

@@ -8,15 +8,14 @@ value of that pixel from each of the indicators and pass that into the model as 
 
 One of the major challenges in the previous work was to get a consistent scoring for the algorithms. As mentioned in the previous section, 
 Mediscore was used to evaluate the performance of the models. Since it is a very time consuming step, a local scoring system was created which 
-would provide a score for the models. However, there was no direct correlation between mediscore and the local scoring method, which proved 
+would provide a score for the models. However, there was no direct correlation between Mediscore and the local scoring method, which proved 
 to be a major drawback when fine tuning models to increase performance. Tweaks in hyperparameters that would increase the score in the 
-local scoring, would not produce the same behavior in from the results returned from mediscore. A major step in our current work was to 
-create a new local scoring system that would be fast and also be consistent to what mediscore would produce, thus enabling us to perform 
-experiments without having a tight coupling with mediscore.
+local scoring, would not produce the same behavior in from the results returned from Mediscore. A major step in our current work was to 
+create a new local scoring system that would be fast and also be consistent to what Mediscore would produce, thus enabling us to perform 
+experiments without having a tight coupling with Mediscore.
 
 Previous work mainly focused on models with decision trees, regression and boosting. The scores produced from the different models are shown in 
+figure \ref{fig:previous_results_table}
 
-Initial work started with a vanilla Logistic Regression model that produced a decent score in mediscore. Other 
+Initial work started with a vanilla Logistic Regression model that produced a decent score in Mediscore.  
 
-
-\ref{fig:previous_results_table}
