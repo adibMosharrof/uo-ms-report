@@ -1,0 +1,29 @@
+\section{Prediction Module}
+
+The prediction module in the Medifor Code base is analogous to a rib-eye steak, the prime  module of the system. This module loads image data,
+ loads and trains a machine learning model, and makes predictions on test data. This document will outline how the prediction module works by
+  initially starting at a high level and slowly delving into the intricate particulars.
+
+The point of entry of the prediction module is the \emph{prediction\_runner.py} file. The module contains an abstract Prediction class, and three 
+concrete classes — PixelPredictions, PatchPredictions and EnsemblePredictions. Similar to all the other module runners, the first step is
+ to read in the configurations. The next step is to load a concrete Prediction class based on the configuration rules and call the 
+ \emph{train\_predict} function. 
+
+The \emph{train\_predict} function in the Predictions class directs the work being done in this module. It initializes the data generators, 
+trains the model, produces the model output in the predict function, and finally calls the scoring module to get the scores. The 
+child prediction classes implement methods for preparing the image references, initializing data generators, and reconstructing
+ the image from the model output. The \emph{train\_model} function in the Predictions class has a call to the \emph{get\_architecture} function,
+  which must also be implemented by the child prediction classes.
+
+Two data generators, TrainDataGenerator and TestDataGenerator; are required by a Prediction class. As the name suggests, 
+TrainDataGenerator is used to load data for training the model and TestDataGenerator is used to load the data for testing the model.
+The data generators are located inside the \emph{data\_generators} folder. The project uses different data types: csv, pixel, patch and image.
+There are test and train data generators for each of the data types. These data generators are fairly complex as they have a lot of parameters
+in the  constructors. The key method in a data generator is the \emph{\_\_getitem\_\_} method, which returns two arrays. The first array is 
+used as the input to the machine learning model and the second array is the ground truth. It is of paramount importance that the dimensions 
+of the two arrays be consistent with what the machine learning model is expecting.
+
+This module follows naming conventions when it comes to naming files and methods, which can be identified upon inspecting the files 
+and methods. When creating new prediction or data generator classes, it is suggested to follow the pattern and place those files in 
+the appropriate directories. If a new data type is introduced, a new Predictions class should be created and it should extend the 
+abstract Prediction class and implement the abstract methods.

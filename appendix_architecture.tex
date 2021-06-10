@@ -1,0 +1,19 @@
+\section{Architecture Module}
+
+The architectures module contains the implementations of the different machine learning models used. 
+Each class in this module defines a machine learning model and must implement a \emph{get\_model} method, which returns a model object. 
+This module cannot be run independently; it exists to serve the predictions module. Based on the model name provided configuration
+ of the predictions module, a model class will be instantiated and the \emph{get\_model} method called during  the training phase.
+
+A model class serves only one data format, therefore when creating or investigating an existing model, the data format must also
+ be explored. Neural network models have been implemented for pixel and image data formats. Logistic regression models have been
+  implemented for the pixel data formats and the UNet model has been implemented for the patched image data format.
+
+The Keras library has been used to create UNet and Neural Network models, whereas SkLearn library has been used to create Logistic
+ regression models. The model objects returned from these two libraries are not consistent, thus the prediction module has to 
+ account for the differences. Keras provides the ability to perform training on small batches, whereas Sklearn expects the whole
+  data to be loaded at once.
+
+The UNet and Neural Network models have been parameterized to be customizable. The full list of parameters and details about 
+specific parts of the model can be found in the respective classes. The logistic regression model just returns a SkLearn model
+ object without any such customizations.

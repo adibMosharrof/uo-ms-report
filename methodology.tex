@@ -44,13 +44,39 @@ preprocessing step, so that it can obtain the data in the format it wants.
 
 \subsubsection{Logistic Regression}
 
+The central mathematical concept that underlies logistic regression is the logit \textemdash the natural logarithm of an odds ratio.
+The simplest example of a logit derives from a $2 \times 2$ contingency table \cite{peng2002introduction}. For simplicity, lets assume that we have 
+designated one of the outcome levels the event of interest, which we can call the event. The odds of the event is the ratio of the probability of the 
+event happening divided by the probability of the event not happening. In a fair die, the odds of rolling a number $<$ 5
+would be 2 as rolling a number $<$ 5 is twice as likely as rolling a 5 or 6. Symmetry in the odds can be calculated by taking the reciprocal, 
+and so the odds of rolling at least a 5 would be 0.5 \cite{lavalley2008logistic}.
+
+A simple logistic regression has the form defined in Equation \ref{eq:logistic_regression} \cite{lavalley2008logistic}
+
+
+\begin{equation} \label{eq:logistic_regression}
+    ln[odds(Y=1)] = \beta_0 + \beta_1X
+\end{equation}
+where:
+\begin{center}
+\begin{conditions}
+    $Y$ & outcome \\
+    $Y = 1$ &  when the event happens \\ 
+    $Y=0$ & when the event does not happen\\
+    \beta_0  & intercept term \\
+    \beta_1 & regression coefficient
+\end{conditions}
+\end{center}
+
 Logistic Regression is a classical linear Machine Learning model that has proved to be a really simple but efficient model. We have included this to create 
 a baseline score with which we can compare other models. This model has been implemented using the scikit-learn library. One of the major drawbacks of logistic
-regression is that it has to load the whole data for training, thus we are limited by the amount of memory we have. It does not have the ability to perform
-batch learning, thus creating this challenge. Due to this challenge, we had to perform Logistic Regression on data that had been scaled down by a factor
-of 32 or more so that we can avoid the memory challenges.
+regression is that it has to load the whole data for training, thus we are limited by the amount of memory we have in the environment we are running the experiments. 
+It does not have the ability to perform batch learning, thus creating this challenge. Due to this challenge, we had to perform Logistic Regression on data that had 
+been scaled down by a factor of 32 or more so that we can avoid the memory challenges.
 
 \subsubsection{Neural Networks}
+
+Add literature about neural networks
 
 We have explored with different types of Neural Network architectures to fit the data, ranging from simple single layer networks to multi layers and also the 
 complex U-NET architecture. The neural architectures have the ability to work with both
@@ -63,21 +89,21 @@ To fine tune the models, different L1 regularization and learning rate values ha
 
 \myparagraph{Multi-layer Neural Networks}
 
+Add literature about multi layer nn
+
+
 A sequential linear multi-layer network has been applied to the 1 dimensional data. The number of neurons in the input layer is equal to the number of 
 indicators in the data. Each dense layer is followed by an activation layer. The final output layer has only one neuron, which predicts whether the current
 pixel is manipulated or not. The input layer has the maximum number of neurons, and the number of neurons in successive dense layers are halved every time. 
-For example, if we start with an input layer with a dimension of $64x64$, and follow it with 3 dense layers, then the dimensions of these 3 layers would be 
-$32x32$, $16x16$ and $8x8$. These dense layer would then be augmented with the output layer, which would have only 1 node.
+For example, if we start with an input layer with a dimension of $64\times64$, and follow it with 3 dense layers, then the dimensions of these 3 layers would be 
+$32\times32$, $16\times16$ and $8\times8$. These dense layer would then be augmented with the output layer, which would have only 1 node.
 
 Add an image of the architecture here
 
 
 \myparagraph{UNET}
 
-UNET is a special type of Convolutional Neural Network, that has been designed specifically to solve image segmentation and localization. 
-
-MORE DETAILS ABOUT UNET HERE 
-
+Add literature on UNET
 
 U-NET works with 2 dimensional data, specifially on the data produced after the preprocessing steps of image patches 
 and image resizing. A single layer in the network is designed to have a convolutional layer, followed by a max pooling layer, which is subsequently 
@@ -86,6 +112,8 @@ hyperparamter tuning are included in the experiments section.
 
 
 \subsubsection{Weighted Ensemble}
+
+Add literature about weighted ensemble
 
 The different machine learning algorithms pick up different patterns from the input data, some of which might be very important, while others might be 
 less. There is also the possibility that some patterns are picked up by certain algorithms, whereas other algorithms completely fail to pick them up.

@@ -1,5 +1,6 @@
 \section{Related Work}
 
+
 The initial work on this data focused on using traditional machine learning algorithms to perform image localization. In these models one 
 row of data was considered to be a single pixel in an image. A data preprocessing step was applied to convert each image into a 1 dimensional
 array, thus enabling the use of a single pixel as a row of data. The number of features in a model is equal to the number of indicators 
@@ -17,5 +18,12 @@ experiments without having a tight coupling with Mediscore.
 Previous work mainly focused on models with decision trees, regression and boosting. The scores produced from the different models are shown in 
 figure \ref{fig:previous_results_table}
 
-Initial work started with a vanilla Logistic Regression model that produced a decent score in Mediscore.  
+\begin{figure}
+    \centering
+    \csvautotabular{figures/previous_results_table.csv}
+    \caption{Previous Results}
+    \label{fig:previous_results_table}
+\end{figure}
+
+Get more ideas from Daniel about previous work
 

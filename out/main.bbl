@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{baldi2000assessing}
 {\sc Baldi, P., Brunak, S., Chauvin, Y., Andersen, C.~A., and Nielsen, H.}
@@ -18,9 +18,22 @@
   coefficient.
 \newblock {\em Computational biology and chemistry 28}, 5-6 (2004), 367--374.
 
+\bibitem{guan2019mfc}
+{\sc Guan, H., Kozak, M., Robertson, E., Lee, Y., Yates, A.~N., Delgado, A.,
+  Zhou, D., Kheyrkhah, T., Smith, J., and Fiscus, J.}
+\newblock Mfc datasets: Large-scale benchmark datasets for media forensic
+  challenge evaluation.
+\newblock In {\em 2019 IEEE Winter Applications of Computer Vision Workshops
+  (WACVW)\/} (2019), IEEE, pp.~63--72.
+
 \bibitem{guilford1954psychometric}
 {\sc Guilford, J.~P.}
 \newblock Psychometric methods.
+
+\bibitem{lavalley2008logistic}
+{\sc LaValley, M.~P.}
+\newblock Logistic regression.
+\newblock {\em Circulation 117}, 18 (2008), 2395--2399.
 
 \bibitem{matthews1975comparison}
 {\sc Matthews, B.~W.}
@@ -28,6 +41,11 @@
   phage lysozyme.
 \newblock {\em Biochimica et Biophysica Acta (BBA)-Protein Structure 405}, 2
   (1975), 442--451.
+
+\bibitem{peng2002introduction}
+{\sc Peng, C.-Y.~J., Lee, K.~L., and Ingersoll, G.~M.}
+\newblock An introduction to logistic regression analysis and reporting.
+\newblock {\em The journal of educational research 96}, 1 (2002), 3--14.
 
 \bibitem{powers2020evaluation}
 {\sc Powers, D.~M.}

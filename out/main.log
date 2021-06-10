@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.4.20)  17 MAY 2021 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.4.20)  9 JUN 2021 18:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -444,33 +444,52 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \NC@list=\toks25
 \extratabsurround=\skip48
 \backup@length=\skip49
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen117
+\captionmargin@=\dimen118
+\captionwidth=\dimen119
+\caption@tempdima=\dimen120
+\caption@indent=\dimen121
+\caption@parindent=\dimen122
+\caption@hangindent=\dimen123
+)
+\c@ContinuedFloat=\count104
+)
+\c@subfigure=\count105
+\c@subtable=\count106
 ) (out/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
-\scratchdimen=\dimen117
+\scratchcounter=\count107
+\scratchdimen=\dimen124
 \scratchbox=\box28
-\nofMPsegments=\count105
-\nofMParguments=\count106
+\nofMPsegments=\count108
+\nofMParguments=\count109
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count107
-\MPscratchDim=\dimen118
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen125
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -512,41 +531,99 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) [1
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+ [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (out/main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (out/main.toc [2])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [2] (./figures.tex) (./introduction.tex) (./data.tex) (./relatedwork.tex) (./scoring.tex [3]
+ [3] (./abstract.tex [4]) (./introduction.tex) (./data.tex
+<figures/probe_image.jpg, id=22, 5781.6pt x 3854.4pt>
+File: figures/probe_image.jpg Graphic file (type jpg)
+<use figures/probe_image.jpg>
+Package pdftex.def Info: figures/probe_image.jpg  used on input line 18.
+(pdftex.def)             Requested size: 135.24202pt x 90.16083pt.
+<figures/target.png, id=23, 5781.6pt x 3854.4pt>
+File: figures/target.png Graphic file (type png)
+<use figures/target.png>
+Package pdftex.def Info: figures/target.png  used on input line 24.
+(pdftex.def)             Requested size: 135.24202pt x 90.16083pt.
+<figures/ind1.png, id=24, 5781.6pt x 3854.4pt>
+File: figures/ind1.png Graphic file (type png)
+<use figures/ind1.png>
+Package pdftex.def Info: figures/ind1.png  used on input line 37.
+(pdftex.def)             Requested size: 132.47932pt x 88.27881pt.
+<figures/ind2.png, id=25, 5781.6pt x 3854.4pt>
+File: figures/ind2.png Graphic file (type png)
+<use figures/ind2.png>
+Package pdftex.def Info: figures/ind2.png  used on input line 41.
+(pdftex.def)             Requested size: 132.47932pt x 88.27881pt.
+<figures/ind3.png, id=26, 5781.6pt x 3854.4pt>
+File: figures/ind3.png Graphic file (type png)
+<use figures/ind3.png>
+Package pdftex.def Info: figures/ind3.png  used on input line 45.
+(pdftex.def)             Requested size: 132.47932pt x 88.27881pt.
+<figures/ind4.png, id=27, 5781.6pt x 3854.4pt>
+File: figures/ind4.png Graphic file (type png)
+<use figures/ind4.png>
+Package pdftex.def Info: figures/ind4.png  used on input line 49.
+(pdftex.def)             Requested size: 132.47932pt x 88.27881pt.
+ [5 <./figures/probe_image.jpg> <./figures/target.png (PNG copy)>]
+<figures/manipulation_fractions_0_-1.png, id=31, 998.7714pt x 577.4373pt>
+File: figures/manipulation_fractions_0_-1.png Graphic file (type png)
+<use figures/manipulation_fractions_0_-1.png>
+Package pdftex.def Info: figures/manipulation_fractions_0_-1.png  used on input line 68.
+(pdftex.def)             Requested size: 345.0pt x 199.46278pt.
+<figures/image_distribution_0_-1.png, id=33, 1358.676pt x 1055.142pt>
+File: figures/image_distribution_0_-1.png Graphic file (type png)
+<use figures/image_distribution_0_-1.png>
+Package pdftex.def Info: figures/image_distribution_0_-1.png  used on input line 80.
+(pdftex.def)             Requested size: 345.0pt x 267.92259pt.
+) (./relatedwork.tex [6 <./figures/ind1.png (PNG copy)> <./figures/ind2.png (PNG copy)> <./figures/ind3.png (PNG copy)> <./figures/ind4.png (PNG copy)>] [7 <./figures/manipulation_fractions_0_-1.png> <./figures/image_distribution_0_-1.png>]) (./scoring.tex [8] [9]
 Overfull \hbox (1.2539pt too wide) in paragraph at lines 34--34
 [][] 
  []
 
-[4] [5]) (./methodology.tex [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+[10] [11]) (./methodology.tex [12] [13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-[8]) (./experiments.tex) (./results.tex) (./discussion.tex) (./future_work.tex) (out/main.bbl [9]) [10] (out/main.aux) ) 
+) (./experiments.tex [17]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+ [18]) (./discussion.tex) (./appendix_general.tex [19]
+<figures/code_file_structure.png, id=87, 362.35374pt x 1014.79124pt>
+File: figures/code_file_structure.png Graphic file (type png)
+<use figures/code_file_structure.png>
+Package pdftex.def Info: figures/code_file_structure.png  used on input line 36.
+(pdftex.def)             Requested size: 345.00818pt x 494.99133pt.
+) (./appendix_prediction.tex [20] [21 <./figures/code_file_structure.png>]) (./appendix_architecture.tex [22]) (out/main.bbl [23] [24]) [25] (out/main.aux) ) 
 Here is how much of TeX's memory you used:
- 3791 strings out of 494923
- 61002 string characters out of 6180742
- 121132 words of memory out of 5000000
- 7005 multiletter control sequences out of 15000+600000
- 9670 words of font info for 35 fonts, out of 8000000 for 9000
+ 5002 strings out of 494923
+ 83222 string characters out of 6180742
+ 140410 words of memory out of 5000000
+ 8188 multiletter control sequences out of 15000+600000
+ 10975 words of font info for 39 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,12n,52p,813b,307s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on out/main.pdf (10 pages, 168483 bytes).
+ 42i,12n,52p,813b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on out/main.pdf (25 pages, 20617996 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 153 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

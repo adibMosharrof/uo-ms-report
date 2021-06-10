@@ -8,7 +8,8 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 \usepackage{array}
-% \renewcommand{\baselinestretch}{1.6}
+\usepackage{subcaption}
+\renewcommand{\baselinestretch}{1.6}
 % \usepackage{subfiles} % Best loaded last in the preamble
 
 
@@ -22,13 +23,17 @@
 \let\endoldequation=\endequation
 \renewenvironment{equation}{\vspace{2mm}\begin{oldequation}}{\end{oldequation}\vspace{2mm}}
 
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}r<{$} @{${}:{}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
 \maketitle
 
 \newpage
 \tableofcontents
 \newpage
 
-\import{./}{figures.tex}
+\import{./}{abstract.tex}
 
 \import{./}{introduction.tex}
 
@@ -42,11 +47,13 @@
 
 \import{./}{experiments.tex}
 
-\import{./}{results.tex}
-
 \import{./}{discussion.tex}
 
-\import{./}{future_work.tex}
+\appendix
+
+\import{./}{appendix_general.tex}
+\import{./}{appendix_prediction.tex}
+\import{./}{appendix_architecture.tex}
 
 \bibliographystyle{acm}
 \bibliography{ref}
